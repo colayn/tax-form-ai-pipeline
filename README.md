@@ -466,6 +466,84 @@ This supports:
 
 ---
 
+---
+
+# 📚 Optional: View dbt Documentation & Data Lineage
+
+This project uses dbt to transform Bronze data into Silver and Gold warehouse layers.
+
+dbt can automatically generate interactive documentation and lineage graphs showing:
+
+- Bronze → Silver → Gold dependencies
+- transformation flow
+- model relationships
+- warehouse metadata
+
+---
+
+## 1. Navigate to dbt Project
+
+```bash
+cd 03_DBT_TRANSFORMATIONS
+```
+
+---
+
+## 2. Generate dbt Documentation
+
+```bash
+dbt docs generate
+```
+
+This creates documentation artifacts inside:
+
+```text
+03_DBT_TRANSFORMATIONS/target/
+```
+
+---
+
+## 3. Launch dbt Documentation Server
+
+```bash
+dbt docs serve
+```
+
+You should see output similar to:
+
+```text
+Serving docs at 0.0.0.0:8080
+```
+
+---
+
+## 4. Open the Documentation UI
+
+Inside Google Cloud Shell:
+
+```text
+Click:
+Web Preview
+→ Preview on Port 8080
+```
+
+This opens the interactive dbt documentation website.
+
+---
+
+# 🔍 Available Features
+
+The dbt documentation site provides:
+
+✅ Bronze → Silver → Gold lineage graph  
+✅ transformation DAG visualization  
+✅ SQL model definitions  
+✅ schema documentation  
+✅ model dependencies  
+✅ warehouse metadata  
+
+---
+
 # 📊 Confidence Threshold Strategy
 
 The pipeline implements confidence-based validation to improve CRM data quality.
