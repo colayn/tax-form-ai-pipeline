@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: tax_pipeline_db
-    project: firstgen-ds-practical
+    project: <YOUR_PROJECT_ID> # <--- Replace - Click your Project. Copy the ID
     dataset: tax_pipeline_db
     tables:
       - name: bronze_tax_data
