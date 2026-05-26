@@ -1,0 +1,22 @@
+# =====================================================
+# FILE: 03_DBT_TRANSFORMATIONS/models/schema.yml
+# =====================================================
+version: 2
+
+models:
+
+  # GOLD LAYER: The Business-Ready Table
+  - name: gold_crm_ready_data
+    description: "Final high-confidence customer records. Aliased from employee tax data for CRM compatibility."
+    columns:
+      - name: customer_identification_number
+        description: "Primary customer identifier (Aliased from SSN)."
+        tests:
+          - not_null
+          - unique
+      - name: customer_last_name
+        tests:
+          - not_null
+      - name: customer_first_name
+        tests:
+          - not_null

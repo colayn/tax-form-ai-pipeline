@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: tax_pipeline_db
+    project: firstgen-ds-practical
+    dataset: tax_pipeline_db
+    tables:
+      - name: bronze_tax_data
+
+models:
+  # 1. SILVER LAYER: The Comprehensive Wide Table
+  - name: silver_clean_tax_forms
+    description: "Pivoted tax data focused on CRM identity fields with calculated quality gates."
+    columns:
+      - name: source_file
+        description: "Primary Key: Original PDF filename."
+        tests:
+          - unique
+          - not_null
+
+      - name: identity_confidence_score
+        description: "Weighted average confidence of Name, SSN, and Address fields."
+        tests:
+          - not_null
+
+      - name: review_required
+        description: "Boolean flag (TRUE/FALSE) indicating if record passed the 0.70 quality threshold."
+        tests:
+          - not_null
+
+      - name: review_reason
+        description: "Categorical explanation for why a record was flagged (e.g., Missing SSN)."

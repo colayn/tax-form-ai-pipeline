@@ -1,0 +1,15 @@
+# =====================================================
+# FILE: 03_DBT_TRANSFORMATIONS/profiles.yml
+# =====================================================
+tax_pipeline_profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth  # Uses the 'gcloud auth application-default login' you did earlier
+      project: firstgen-ds-practical # <-- Replace with config.PROJECT_ID
+      dataset: tax_pipeline_db       # <-- Replace with config.DATASET_ID
+      threads: 4
+      timeout_seconds: 300
+      location: us                   # <-- Replace with config.LOCATION
+      priority: interactive

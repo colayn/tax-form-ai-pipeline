@@ -1,0 +1,9 @@
+google-cloud-documentai
+google-cloud-storage
+google-cloud-bigquery
+google-api-core
+dbt-bigquery
+pandas
+pyarrow
+db-dtypes
+numpy

@@ -1,0 +1,27 @@
+# =====================================================
+# FILE: 02_PIPELINE_AND_CODE/transfromation/dbt/dbt_project.yml
+# =====================================================
+name: 'tax_pipeline_transform'
+version: '1.0.0'
+config-version: 2
+
+# This name must match the name in profiles.yml
+profile: 'tax_pipeline_profile'
+
+# Where dbt looks for your SQL logic
+model-paths: ["models"]
+test-paths: ["tests"]
+target-path: "target"
+# clean-targets:
+#   - "target"
+#   - "dbt_packages"
+
+# Default configuration for models
+models:
+  tax_pipeline_transform:
+    # Staging/Clean models
+    clean:
+      +materialized: table
+    # Your Gold/Mart models
+    mart:
+      +materialized: table
