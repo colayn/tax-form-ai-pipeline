@@ -175,8 +175,6 @@ tax-form-ai-pipeline
 │
 ├── 04_DATA_MODEL/
 │
-├── 05_ANALYSIS_AND_REPORTS/
-│
 ├── README.md
 └── requirements.txt
 ```
