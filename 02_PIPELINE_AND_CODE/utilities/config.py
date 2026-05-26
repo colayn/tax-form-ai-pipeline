@@ -3,9 +3,9 @@
 # =====================================================
 
 # Global Settings
-PROJECT_ID = "firstgen-ds-practical"
+PROJECT_ID = "YOUR_PROJECT_ID" # <--- Modify - Click your Project. Copy the ID
 LOCATION = "us"
-PROCESSOR_ID = "5aabab6dc13ee5cc"
+PROCESSOR_ID = "YOUR_DOCUMENT_AI_PROCESSOR_ID" # <--- Modify
 BUCKET_NAME = f"{PROJECT_ID}-tax-pipeline"
 DATASET_ID = "tax_pipeline_db"
 
