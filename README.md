@@ -29,7 +29,7 @@ This project delivers:
 # 🏛️ Pipeline Architecture
 
 
-![alt text](pipeline-architecture.png)
+![Data Pipeline Architecture](04_DATA_MODELS/pipeline-architecture.png)
 
 
 ---
