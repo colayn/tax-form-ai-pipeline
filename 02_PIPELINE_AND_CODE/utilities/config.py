@@ -11,4 +11,4 @@ DATASET_ID = "tax_pipeline_db"
 
 # Local Paths
 LOCAL_DATA_DIR = "01_DATA_SOURCES/sampling_input_docs"
-OUTPUT_DIR = "01_DATA_SOURCES/output_checkpoints"
+OUTPUT_DIR = "01_DATA_SOURCES"
