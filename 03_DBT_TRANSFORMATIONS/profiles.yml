@@ -7,9 +7,9 @@ tax_pipeline_profile:
     dev:
       type: bigquery
       method: oauth  # Uses the 'gcloud auth application-default login' you did earlier
-      project: firstgen-ds-practical # <-- Replace with config.PROJECT_ID
-      dataset: tax_pipeline_db       # <-- Replace with config.DATASET_ID
+      project: <YOUR_PROJECT_ID>     # <-- Replace - Click your Project. Copy the ID
+      dataset: tax_pipeline_db      
       threads: 4
       timeout_seconds: 300
-      location: us                   # <-- Replace with config.LOCATION
+      location: us                   
       priority: interactive
