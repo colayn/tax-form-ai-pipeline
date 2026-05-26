@@ -29,7 +29,7 @@ This project delivers:
 # 🏛️ Pipeline Architecture
 
 
-![alt text](pipeline-architecture-1.png)
+![alt text](pipeline-architecture.png)
 
 
 ---
