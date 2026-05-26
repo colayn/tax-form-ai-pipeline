@@ -77,9 +77,11 @@ Transforms raw extraction outputs into cleaned and validated customer records.
 
 | Rule | Action |
 |---|---|
-| Missing SSN | review_required = TRUE |
-| Low confidence | review_required = TRUE |
-| Passed validation | review_required = FALSE |
+| Missing Critical Field: SSN | review_required = TRUE |
+| Missing Critical Field: Name | review_required = TRUE |
+| Missing Critical Field: Address | review_required = TRUE |
+| Low confidence Scan | review_required = TRUE |
+| Passed | review_required = FALSE |
 
 ## Schema
 
