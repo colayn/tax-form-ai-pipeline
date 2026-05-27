@@ -430,7 +430,7 @@ Prompt upon completing the pipeline:
 🕒 Start Time: Tue May 26 10:47:32 AM UTC 2026
 🕒 End Time:   Tue May 26 10:55:27 AM UTC 2026
 
-🥇 Gold Layer is ready in BigQuery. Gold Table: gold_crm_ready_dat
+🥇 Gold Layer is ready in BigQuery. Gold Table: gold_crm_ready_data
 ```
 
 
