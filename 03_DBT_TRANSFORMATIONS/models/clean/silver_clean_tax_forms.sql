@@ -14,13 +14,16 @@ WITH raw_pivoted AS (
         MAX(CASE WHEN entity_type = 'EmployeeAddress_State' THEN raw_value END) AS employee_state,
 
         -- 3. Calculate Identity-Specific Confidence Score (with NULL safety)
-        (
-            (COALESCE(MAX(CASE WHEN entity_type = 'EmployeeName_FirstName' THEN confidence END), 0) +
-             COALESCE(MAX(CASE WHEN entity_type = 'EmployeeName_LastName' THEN confidence END), 0) +
-             COALESCE(MAX(CASE WHEN entity_type = 'SSN' THEN confidence END), 0) +
-             COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_StreetAddressOrPostalBox' THEN confidence END), 0) +
-             COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_City' THEN confidence END), 0) +
-             COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_State' THEN confidence END), 0)) / 6
+        ROUND(
+            (
+                (COALESCE(MAX(CASE WHEN entity_type = 'EmployeeName_FirstName' THEN confidence END), 0) +
+                 COALESCE(MAX(CASE WHEN entity_type = 'EmployeeName_LastName' THEN confidence END), 0) +
+                 COALESCE(MAX(CASE WHEN entity_type = 'SSN' THEN confidence END), 0) +
+                 COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_StreetAddressOrPostalBox' THEN confidence END), 0) +
+                 COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_City' THEN confidence END), 0) +
+                 COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_State' THEN confidence END), 0)) / 6
+            ),
+            2
         ) AS identity_confidence_score,
 
         MAX(extraction_timestamp) AS extraction_ts
