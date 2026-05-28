@@ -29,7 +29,8 @@ def run_main():
     # Load to BigQuery Bronze
     bronze_df = pd.DataFrame(all_extracted_data)
     table_id = f"{config.PROJECT_ID}.{config.DATASET_ID}.bronze_tax_data"
-    bq_client.load_table_from_dataframe(bronze_df, table_id).result()
+    job_config = bigquery.LoadJobConfig(write_disposition="WRITE_TRUNCATE")
+    bq_client.load_table_from_dataframe(bronze_df, table_id, job_config=job_config).result()
     
     # Save local checkpoint
     bronze_df.to_csv(f"{config.OUTPUT_DIR}/bronze_checkpoint.csv", index=False)
