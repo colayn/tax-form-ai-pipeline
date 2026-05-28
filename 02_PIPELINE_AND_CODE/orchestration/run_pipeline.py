@@ -22,7 +22,7 @@ def run_main():
                         "source_file": filename,
                         "entity_type": ent.type_,
                         "raw_value": ent.mention_text,
-                        "confidence": ent.confidence,
+                        "confidence": round(ent.confidence, 2),
                         "extraction_timestamp": pd.Timestamp.now()
                     })
 
