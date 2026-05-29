@@ -161,15 +161,20 @@ tax-form-ai-pipeline
 │       └── config.py
 │
 ├── 03_DBT_TRANSFORMATIONS/     # SQL Transformation Layer
+│   ├── logs/
+│   ├── macros/
+│   │   └── generate_schema_name.sql  # To prevent double-names
+│   │
 │   ├── models/
 │   │   ├── clean/              # Silver Layer (Validation & Pivoting)
 |   |   |   ├── silver_clean_tax_forms.sql 
 │   |   |   └── schema.yml
 │   |   |
 │   │   └── mart/               # Gold Layer (Business Aliasing)
-|   |       ├── gold_crm_ready_data.sql
-│   |       └── schema.yml
-│   │
+|   |   |   ├── gold_crm_ready_data.sql
+│   |   |   └── schema.yml
+│   │   └── sources.yml
+│   │   
 │   ├── dbt_project.yml
 │   └── profiles.yml
 │
@@ -399,7 +404,7 @@ project: <YOUR_PROJECT_ID> # Click your Project. Copy the ID
 Open:
 
 ```text 
-03_DBT_TRANSFORMATIONS/models/clean/schema.yml
+03_DBT_TRANSFORMATIONS/models/sources.yml
 ```
 
 Update:
