@@ -34,7 +34,7 @@ This project delivers:
 
 ---
 
-# 🥉 Bronze Layer
+## 🥉 Bronze Layer (bronze_raw_extractions)
 
 ## Purpose
 
@@ -47,7 +47,7 @@ Stores raw extracted entities directly from Google Document AI.
 - Supports traceability and auditability
 - One row per extracted entity
 
-## Schema
+## Schema (bronze_tax_data)
 
 | Column | Description |
 |---|---|
@@ -59,7 +59,7 @@ Stores raw extracted entities directly from Google Document AI.
 
 ---
 
-# 🥈 Silver Layer
+## 🥈 Silver Layer (silver_clean_transformations)
 
 ## Purpose
 
@@ -83,7 +83,7 @@ Transforms raw extraction outputs into cleaned and validated customer records.
 | Low confidence Scan | review_required = TRUE |
 | Passed | review_required = FALSE |
 
-## Schema
+## Schema (silver_clean_tax_forms)
 
 | Column | Description |
 |---|---|
@@ -101,7 +101,7 @@ Transforms raw extraction outputs into cleaned and validated customer records.
 
 ---
 
-# 🥇 Gold Layer
+# 🥇 Gold Layer (gold_mart_crm)
 
 ## Purpose
 
@@ -116,6 +116,20 @@ review_required = FALSE
 ```
 
 are promoted into the Gold layer.
+
+## Schema (silver_clean_tax_forms)
+
+| Column | Description |
+|---|---|
+| source_file | Original PDF |
+| customer_first_name | Employee first name |
+| customer_last_name | Employee last name |
+| customer_identification_number | Employee SSN |
+| customer_street_address | Employee address |
+| customer_city_address | City |
+| customer_state_address | State |
+| identity_confidence_score | Average confidence score |
+| data_extraction_timestamp | Extraction timestamp |
 
 ---
 
