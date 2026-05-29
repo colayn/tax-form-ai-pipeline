@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: bronze_raw_extractions
+    project: <YOUR_PROJECT_ID> # <--- Replace - Click your Project. Copy the ID
+    dataset: bronze_raw_extractions
+    tables:
+      - name: bronze_tax_data
+
+  - name: silver_clean_transformations
+    project: <YOUR_PROJECT_ID> # <--- Replace - Click your Project. Copy the ID
+    dataset: silver_clean_transformations
+    tables:
+      - name: silver_clean_tax_forms
+
+  - name: gold_mart_crm
+    project: <YOUR_PROJECT_ID> # <--- Replace - Click your Project. Copy the ID
+    dataset: gold_mart_crm
+    tables:
+      - name: gold_crm_ready_data
