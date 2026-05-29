@@ -16,4 +16,4 @@ GOLD_DATASET   = "gold_mart_crm"
 
 # Local Paths
 LOCAL_DATA_DIR = "01_DATA_SOURCES/sampling_input_docs"
-OUTPUT_DIR = "01_DATA_SOURCES"
+OUTPUT_DIR = "05_SAMPLE_OUTPUTS"
