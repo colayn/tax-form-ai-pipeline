@@ -94,7 +94,7 @@ Transforms raw extraction outputs into cleaned and validated customer records.
 | employee_street_address | Employee address |
 | employee_city | City |
 | employee_state | State |
-| identify_confidence_score | Minimum critical confidence |
+| identity_confidence_score | Minimum critical confidence |
 | extraction_ts | Extraction timestamp |
 | review_required | Manual review flag |
 | review_reason | Validation issue |
