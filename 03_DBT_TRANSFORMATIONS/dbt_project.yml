@@ -5,23 +5,18 @@ name: 'tax_pipeline_transform'
 version: '1.0.0'
 config-version: 2
 
-# This name must match the name in profiles.yml
 profile: 'tax_pipeline_profile'
-
-# Where dbt looks for your SQL logic
 model-paths: ["models"]
-test-paths: ["tests"]
-target-path: "target"
-# clean-targets:
-#   - "target"
-#   - "dbt_packages"
+macro-paths: ["macros"]
 
-# Default configuration for models
 models:
   tax_pipeline_transform:
-    # Staging/Clean models
+    # Models in models/clean/ will go to: silver_clean_transformations datasets
     clean:
       +materialized: table
-    # Your Gold/Mart models
+      +schema: silver_clean_tax_forms # UPDATED
+    
+    # Models in models/mart/ will go to: gold_mart_crm datasets
     mart:
       +materialized: table
+      +schema: gold_crm_ready_data # UPDATED
