@@ -94,7 +94,7 @@ Transforms raw extraction outputs into cleaned and validated customer records.
 | employee_street_address | Employee address |
 | employee_city | City |
 | employee_state | State |
-| identity_confidence_score | Minimum critical confidence |
+| identity_confidence_score | Average confidence score |
 | extraction_ts | Extraction timestamp |
 | review_required | Manual review flag |
 | review_reason | Validation issue |
@@ -128,8 +128,7 @@ are promoted into the Gold layer.
 | customer_street_address | Employee address |
 | customer_city_address | City |
 | customer_state_address | State |
-| identity_confidence_score | Average confidence score |
-| data_extraction_timestamp | Extraction timestamp |
+| data_extraction_timestamp | Metadata |
 
 ---
 
