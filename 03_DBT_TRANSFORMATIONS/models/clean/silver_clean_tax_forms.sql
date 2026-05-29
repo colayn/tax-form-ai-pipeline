@@ -1,4 +1,7 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='table',
+    schema='silver_clean_transformations'
+) }}
 
 WITH raw_pivoted AS (
     SELECT
@@ -17,17 +20,17 @@ WITH raw_pivoted AS (
         ROUND(
             (
                 (COALESCE(MAX(CASE WHEN entity_type = 'EmployeeName_FirstName' THEN confidence END), 0) +
-                 COALESCE(MAX(CASE WHEN entity_type = 'EmployeeName_LastName' THEN confidence END), 0) +
-                 COALESCE(MAX(CASE WHEN entity_type = 'SSN' THEN confidence END), 0) +
-                 COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_StreetAddressOrPostalBox' THEN confidence END), 0) +
-                 COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_City' THEN confidence END), 0) +
-                 COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_State' THEN confidence END), 0)) / 6
+                COALESCE(MAX(CASE WHEN entity_type = 'EmployeeName_LastName' THEN confidence END), 0) +
+                COALESCE(MAX(CASE WHEN entity_type = 'SSN' THEN confidence END), 0) +
+                COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_StreetAddressOrPostalBox' THEN confidence END), 0) +
+                COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_City' THEN confidence END), 0) +
+                COALESCE(MAX(CASE WHEN entity_type = 'EmployeeAddress_State' THEN confidence END), 0)) / 6
             ),
             2
         ) AS identity_confidence_score,
 
         MAX(extraction_timestamp) AS extraction_ts
-    FROM {{ source('tax_pipeline_db', 'bronze_tax_data') }}
+    FROM {{ source('bronze_raw_extractions', 'bronze_tax_data') }}
     GROUP BY 1
 )
 
