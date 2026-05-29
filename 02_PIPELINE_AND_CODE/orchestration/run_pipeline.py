@@ -47,7 +47,7 @@ def run_main():
     
     # Save local checkpoint for debugging
     os.makedirs(config.OUTPUT_DIR, exist_ok=True)
-    bronze_df.to_csv(f"{config.OUTPUT_DIR}/bronze_checkpoint.csv", index=False)
+    bronze_df.to_csv(f"{config.OUTPUT_DIR}/sample_parsing_results.csv", index=False)
     
     print(f"🏁 RAW Data loaded to BRONZE. Proceed to 'dbt run' for Silver/Gold transformations.")
 
