@@ -8,7 +8,7 @@ tax_pipeline_profile:
       type: bigquery
       method: oauth  # Uses the 'gcloud auth application-default login' you did earlier
       project: <YOUR_PROJECT_ID>     # <-- Replace - Click your Project. Copy the ID
-      dataset: tax_pipeline_db      
+      dataset: silver_clean_transformations # Updated      
       threads: 4
       timeout_seconds: 300
       location: us                   
