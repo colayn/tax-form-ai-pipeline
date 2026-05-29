@@ -192,7 +192,7 @@ tax-form-ai-pipeline
 | Non-GCP Service | Purpose |
 |---|---|
 | dbt | Silver & Gold transformations |
-| Python | Orchestration & ETL |
+| Bash | Orchestration & ETL |
 
 ---
 
