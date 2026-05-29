@@ -181,13 +181,16 @@ tax-form-ai-pipeline
 
 ---
 
-# ☁️ GCP Services Used
+# ☁️ GCP & Non-GCP Services Used
 
-| Service | Purpose |
+| GCP Service | Purpose |
 |---|---|
 | Google Cloud Storage (GCS) | PDF landing bucket |
 | Google Document AI | W-2 tax form extraction |
 | BigQuery | Data warehouse |
+
+| Non-GCP Service | Purpose |
+|---|---|
 | dbt | Silver & Gold transformations |
 | Python | Orchestration & ETL |
 
